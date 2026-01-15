@@ -33,7 +33,7 @@ function generateCalendarSVG() {
   
   const dotRadius = 10;
   const dotSpacing = 38;
-  const monthStartY = 280;
+  const monthStartY = 800;
   const monthSpacingY = 340;
   
   const cols = 3;
@@ -91,7 +91,7 @@ function generateCalendarSVG() {
   }
 
   // Stats at bottom
-  const statsY = 1940;
+  const statsY = 2200;
   svgContent.push(`<text x="540" y="${statsY}" fill="#ff6b35" font-size="48" font-weight="bold" font-family="Arial" text-anchor="middle">${daysLeft}d left</text>`);
   svgContent.push(`<text x="700" y="${statsY}" fill="#666666" font-size="48" font-family="Arial">·</text>`);
   svgContent.push(`<text x="780" y="${statsY}" fill="#666666" font-size="48" font-family="Arial">${percentage}%</text>`);
