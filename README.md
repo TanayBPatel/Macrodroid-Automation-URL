@@ -1,16 +1,46 @@
-# React + Vite
+# Year Progress Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Node.js application that generates a dynamic year progress calendar image, similar to a habit tracker.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📅 Visual calendar showing all 12 months
+- ⚪ White dots for completed days
+- 🟠 Orange dot for the current day
+- ⚫ Gray dots for remaining days
+- 📊 Shows days left and percentage completed
+- 🖼️ Generates PNG image at `/photo` endpoint
 
-## React Compiler
+## Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+## Usage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Start the server:
+```bash
+npm start
+```
+
+Or use development mode with auto-restart:
+```bash
+npm run dev
+```
+
+## Endpoints
+
+- `GET /` - View the calendar in a web page
+- `GET /photo` - Get the calendar as a PNG image (1080x2340)
+
+## How it works
+
+The application:
+1. Calculates the current date and year progress
+2. Generates a canvas-based image with all 12 months
+3. Colors each day dot based on whether it's past, present, or future
+4. Displays remaining days and completion percentage
+5. Serves the image at the `/photo` endpoint
+
+The image updates automatically based on the server's current date.
