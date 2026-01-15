@@ -40,7 +40,7 @@ const PhotoPage = () => {
           // Create a temporary link and trigger download
           const link = document.createElement('a');
           link.href = url;
-          link.download = `year-progress-${new Date().getFullYear()}.png`;
+          link.download = `year-progress-${new Date().getFullYear()}.jpeg`;
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
@@ -50,7 +50,7 @@ const PhotoPage = () => {
           
           // Navigate back to home after a short delay
           setTimeout(() => navigate('/'), 1000);
-        }, 'image/png');
+        }, 'image/jpeg');
       } catch (error) {
         console.error('Error capturing image:', error);
         navigate('/');
